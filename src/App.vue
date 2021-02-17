@@ -1,15 +1,29 @@
 <template>
   <div id="app">
      <p id="display">{{display}}</p>
-    <button v-for="number of numbers" :key="number.id" :id="number.id" v-on:click="addNum(number.title)">{{number.title}}</button>
-    <button id="decimal" v-on:click="decimal">.</button>
-    <button id="equals" v-on:click="equals">=</button>
-    <button id="add" v-on:click="addOperator('+')">+</button>
-    <button id="subtract"  v-on:click="addOperator('-')">-</button>
-    <button id="multiply" v-on:click="addOperator('*')">*</button>
-    <button id="divide"  v-on:click="addOperator('/')">/</button>
-    <button id="clear" v-on:click="clear">C</button>
+     <div id="padNum">
 
+    <div class="button" id="one"  v-on:click="addNum('1')">1</div>
+    <div class="button" id="two"  v-on:click="addNum('2')">2</div>
+    <div class="button" id="three"  v-on:click="addNum('3')">3</div>
+    <div class="button" id="four"  v-on:click="addNum('4')">4</div>
+    <div class="button" id="five"  v-on:click="addNum('5')">5</div>
+    <div class="button" id="six"  v-on:click="addNum('6')">6</div>
+    <div class="button" id="seven"  v-on:click="addNum('7')">7</div>
+    <div class="button" id="eight"  v-on:click="addNum('8')">8</div>
+    <div class="button" id="nine"  v-on:click="addNum('9')">9</div>
+    <div class="button" id="zero"  v-on:click="addNum('0')">0</div>
+    <div class="button" id="decimal" v-on:click="decimal">.</div>
+
+<div class="button" id="clear" v-on:click="clear">C</div>
+    <div class="button" id="add" v-on:click="addOperator('+')">+</div>
+    <div class="button" id="subtract"  v-on:click="addOperator('-')">-</div>
+    <div class="button" id="multiply" v-on:click="addOperator('*')">*</div>
+    <div class="button" id="divide"  v-on:click="addOperator('/')">/</div>
+
+    
+        <div class="button double"  id="equals" v-on:click="equals">=</div>
+</div>
   </div>
 </template>
 
@@ -66,7 +80,7 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'PT Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -74,5 +88,36 @@ export default {
   margin-top: 60px;
   width: 300px;
   margin: auto;
+
+}
+
+#display{
+  background-color: rgb(24, 23, 23);
+  color:antiquewhite;
+  text-align: end;
+  width: 250px;
+  padding: 20px;
+  height: 34px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  font-size: 30px;
+}
+
+.button{
+  display: inline-block;
+  width: 95px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: darkslategrey;
+  color: white;
+  margin:1px
+}
+
+.button:hover{
+  background-color:darkgoldenrod;
+}
+
+.double{
+  width:192px;
 }
 </style>
